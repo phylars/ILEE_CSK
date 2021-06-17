@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Tutorial - ILEE_CSK</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">ILEE_CSK</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../Home/" class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../API/" class="nav-link">API</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Tutorial</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../API/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#for-users-without-python-experience" class="nav-link">For users without Python experience</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#installing-ilee_csk" class="nav-link">Installing ILEE_CSK</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#installing-napari-for-3d-visualization" class="nav-link">Installing napari for 3D visualization</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#cytoskeleton-indices-computation" class="nav-link">Cytoskeleton indices computation</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#batch-processing-all-samples-in-a-document" class="nav-link">Batch processing all samples in a document</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="for-users-without-python-experience">For users without Python experience</h1>
+<p>ILEE_CSK is a python library and therefore we need to setup your python environment to process your data. Don't be afraid, should not be difficult.</p>
+<p>First, we need to install your python environment. For novice, we only recommend the one-step simplest way: <a href="https://www.anaconda.com/">Anaconda</a>. Please find the Anaconda installer that applies to your computer at https://www.anaconda.com/products/individual, and install it. Anaconda has a python environment has most of the libraries we need, so you do not need to install other libraries. </p>
+<p>Anaconda has a well-established Python IDE (Integrated development environment) <a href="https://www.spyder-ide.org/">Spyder</a> optimized for scientific computation and visualization. Please just regard it as a powerful calculator in your computer. When you installed our library,  you need to open Spyder to compute your samples. You can either search Spyder in your apps or open Anaconda Navigator to open it. Typically it looks like this:</p>
+<p><img alt="spyder.png" src="https://github.com/phylars/image_host/blob/main/ILEE/spyder.png?raw=true" /></p>
+<p>Since you need to install ILEE_CSK, you need to use commend lines. <u>Please note that you should <strong>NOT</strong> use your Windows or Apple command lines, but instead, please open Anaconda Prompt and enter the install commands you wants.</u> This makes your intended libraries installed in Anaconda environment particularly. </p>
+<p>You can either search Anaconda Prompt in your apps or open Anaconda Navigator to open it. It should look like this:</p>
+<p><img alt="cmd.png" src="https://github.com/phylars/image_host/blob/main/ILEE/cmd.png?raw=true" /></p>
+<p><img alt="cmd1.png" src="https://github.com/phylars/image_host/blob/main/ILEE/cmd1.png?raw=true" /></p>
+<p>This is the interface where you can install any library. We use use it for library installing purposes, which should not be confounded with Spyder.</p>
+<h1 id="installing-ilee_csk">Installing ILEE_CSK</h1>
+<p>ILEE_CSK is available at pipy...</p>
+<pre><code class="language-sh">pip install ILEE_CSK
+</code></pre>
+<p>ILEE_CSK supports MATLAB-based GPU acceleration for native-3D image processing. If you have MATLAB license as well as CUDA GPU, and wish to proceed native-3D mode. Please download......</p>
+<h1 id="installing-napari-for-3d-visualization">Installing napari for 3D visualization</h1>
+<p>The <a href="https://napari.org/">napari</a> is a multi-dimensional image viewer for python. It is a outstanding tool for confocal image visualization, especially for visualizing 3D dnapariata structure. We just recommend you directly follow their documentation to install it: https://napari.org/.</p>
+<h1 id="cytoskeleton-indices-computation">Cytoskeleton indices computation</h1>
+<h2 id="batch-processing-all-samples-in-a-document">Batch processing all samples in a document</h2>
+<p>Confocal images of cytoskeletons are generally taken as 3D stacks (Native 3D structure). Hereby we support batch processing of files of  3D stack. If your source images are already 2D, please check our API to process it individually.</p>
+<h3 id="generating-tiff-raw-images-by-fiji-imagej">Generating TIFF raw images by FIJI (ImageJ).</h3>
+<p><a href="https://fiji.sc/">FIJI</a> is a java-based free-to-use image processing GUI software with optimized for scientific use. If you don't have it, please download it and congratulations -- you have found a great treasure. Put all of your confocal image files in the same document. Open FIJI, select process-&gt;batch-&gt;convert</p>
+<p><img alt="fiji_batch.png" src="https://github.com/phylars/image_host/blob/main/ILEE/fiji_batch.png?raw=true" /></p>
+<p>Input is the document of your raw confocal-format files; output is wherever you want. Press convert, and we just get what we need for ILEE. Please note that output format MUST BE tiff, interpolation MUST be None, and scale factor MUST BE 1. This make sure your tiff is literally raw data. </p>
+<h3 id="find-your-channel-index-and-k2">Find your channel index and K2</h3>
+<p>You need to learn the data structure of the raw TIFF files you generated to finish parameter setting. Please get the path of one of your generated TIFF file and read it by skimage.io, such as:</p>
+<pre><code class="language-python">image_example_path = 'D:/my_experiments/generated_TIFF_images/sample_001.tiff'
+from skimage import io
+img = io.imread(image_example_path)
+</code></pre>
+<p>Generally, img should be a 4D array, and one of the dimension with the smallest size among the four dimensions should be your fluorescence channel. (For Python novice, you can check the Spyder variable explorer on the column "size".) For example, when I use a Olympus confocal system and I gets a array with dimension size of (25, 3, 800, 800), which means (z, channel, x, y). Difference confocal system have these numbers occur at different order. Since you know how did you take the image by confocal, you can understand what these number means easily. <u>NOTE: Our batch processing pipeline requires your channel to be the dimension with the lowest size, and the second lowest to be z-axis resolution.</u> This applies to almost all of the cytoskeleton confocal images, because the number of channels is generally no greater than 5, with maximum 4 fluorescence channels plus a transmission channel, and z-stack number is usually greater than 5 to cover the total cell. If you have a abnormal data structure that does not apply, we wish to you inform us about what the structure is and why it is necessary, so that we may improve our algorithm. </p>
+<p>You need to figure out which of your channel is the cytoskeleton fluorescence channel you want to analyze. Generally, the channel order will be the same as your confocal setting, and be aware that Python index start from 0 instead of 1. For example, if I used channel 1 to see GFP-labeled actin, channel 2 to see chloroplast far-red light, and an additional transmission channel to see bright field, my objective index is supposed to be 0 (for channel 1). However, to clearly verify which one is your objective channel, you can try visualize their projected image:</p>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+img = img[:,0,:,:] #You can change this &quot;0&quot; to the other channel indexes you want to check.
+img = np.amax(img, axis=0) #In my case, my first dimension (index 0) is z-axis, if your z-axis is another dimension, please change accordingly.
+#run this three line together:
+plt.figure(figsize = (18, 18))
+plt.imshow(img)
+plt.show()
+</code></pre>
+<p>Another way is directly see the 3D voxel image by napari:</p>
+<pre><code class="language-python">import napari
+with napari.gui_qt():
+    viewer = napari.Viewer()
+    for i in range(3): #This 3 is the total number of your channels. Change accordingly.
+        viewer.add_image(img[:,i,:,:])   
+</code></pre>
+<p>When you learn your data structure, you can start to evaluate your K2 for the batch using the function <strong>opt_k2</strong>. For example, if my index of cytoskeleton fluorescence channel is 0, you can do like such:</p>
+<pre><code class="language-python">import ILEE_CSK
+folder = 'D:/my_experiments/generated_TIFF_images/'
+the_optimal_K2 = ILEE_CSK.opt_k2(folder_path = folder, target_channel = 0)
+</code></pre>
+<h3 id="batch-processing-by-2d-mode">Batch processing by 2D mode</h3>
+<p>After you determine the optimal K2 for you sample pool. Using the same fluorescence channel index, you can finish batch processing by just one step:</p>
+<pre><code class="language-python">results = ILEE_CSK.analyze_document_2D (folder_path = folder, obj_channel = 0, k2 = the_optimal_K2)
+</code></pre>
+<p>Please read the API to learn about the parameters. </p>
+<p>The "results" will be a table in format of Pandas dataframe, which you can check and process within python IDE. You may also want to directly output it as an Excel file, which can be done as such:</p>
+<pre><code class="language-python">result.to_excel('D:/my_experiments/generated_TIFF_images/analysis_result.xlsx')
+</code></pre>
+<h3 id="batch-processing-by-3d-mode-on-cpu">Batch processing by 3D mode on CPU</h3>
+<p>Batch processing on 3D mode use a similar pipeline function that is easy to use. We recommend no less than 16G memory, otherwise it may fail. You need to manually check your voxel size on x/y- and z-axis by μm, if you don't remember. A simple way is to check by FIJI (ImageJ); after open one of you samples, select image-&gt;Show Info to get it. In the example above, my voxel size is 0.132μm on x/y-axis and 0.5μm on z-axis. </p>
+<p><img alt="fiji_info.png" src="https://github.com/phylars/image_host/blob/main/ILEE/fiji_info.png?raw=true" /></p>
+<p>You can use batch processing function on 3D mode. I will use my image information as an example:</p>
+<pre><code class="language-python">results = ILEE_CSK.analyze_document_3D (folder_path = folder,
+                                        obj_channel = 0, 
+                                        k2 = the_optimal_K2, 
+                                        xy_unit = 0.132, 
+                                        z_unit = 0.5,     
+                                        pixel_size = 0.132, 
+                                        single_k = True, 
+                                        use_GPU = False)
+</code></pre>
+<p>The setting above uses CPU mode, which is very slow (5~7min per 25x800x800 image). Therefore, we highly recommend to turn on single_k mode to save half of the time with acceptable sacrifice at accuracy on thick filaments.</p>
+<h3 id="batch-processing-by-3d-mode-on-gpu">Batch processing by 3D mode on GPU</h3></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
