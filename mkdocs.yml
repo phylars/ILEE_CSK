@@ -1,0 +1,5 @@
+site_name: ILEE_CSK
+nav:
+    - Home: Home.md
+    - API: API.md
+    - Tutorial: Tutorial.md
