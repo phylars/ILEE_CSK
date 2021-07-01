@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>ILEE_CSK - ILEE_CSK</title>
+  <title>Help Needed - ILEE_CSK</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "ILEE_CSK";
-    var mkdocs_page_input_path = "Home.md";
+    var mkdocs_page_name = "Help Needed";
+    var mkdocs_page_input_path = "Help needed.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -59,8 +59,18 @@
                     <li class="toctree-l1"><a class="reference internal" href="../API/">API</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Help%20needed/">Help Needed</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Help Needed</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#a-general-sparse-linear-solver-on-gpu">A general sparse linear solver on GPU</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#upgrading-skeletonization-algorithm">Upgrading skeletonization algorithm</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bug-report">Bug report</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tell-us-your-demand">Tell us your demand</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -84,7 +94,7 @@
     
       
     
-    <li>ILEE_CSK</li>
+    <li>Help Needed</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -95,36 +105,32 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="ilee_csk">ILEE_CSK</h1>
-<p>The eukaryotic cytoskeleton plays essential roles in cell signaling, trafficking, and motion. We aim to provide the best cytoskeleton segmentation-analysis algorithm and platform. </p>
-<p>ILEE_CSK is a Python library that provides a platform for unguided and automated quantitative analysis of cytoskeletal images at high accuracy, which support both 2D and native 3D data structure. ILEE means Implicit Laplacian of Enhanced Edge, which is a local thresholding algorithm that detects and uses the edge of cytoskeleton filaments as the local baseline for fine thresholding. Our robust algorithm captures and computes native pixel/voxel value, first-order derivative (gradient), and second-order derivative (Laplacian) of the image to automatedly generate a threshold image for cytoskeleton segmentation. </p>
-<p><img alt="scheme.PNG" src="https://github.com/phylars/image_host/blob/main/ILEE/scheme.PNG?raw=true" /></p>
-<p>The binary image of cytoskeleton fraction, together with the raw image is processed to compute more than 10 cytoskeleton indices, which are the matrices that measure the cytoskeletal features, of 5 classes: density, bundling, severing, branching, and directionality. The generated data can be used to determine and discover critical cytoskeletal feature of your own biological samples. </p>
-<p>In general, ILEE_CSK provides following state-of-art features to make outstanding performance:</p>
-<ul>
-<li>
-<p>Support of native 3D mode, avoiding image projection that losses a considerable amount of information perpendicular to z-axis. </p>
-</li>
-<li>
-<p>Unguided algorithm, avoiding human-bias related to subjective judgment in manual global thresholding, the currently most popular approach.</p>
-</li>
-<li>
-<p>High accuracy, the top among the kind. Please read our paper.</p>
-</li>
-<li>
-<p>Most complete cytoskeleton index list, with many novel indices developed by ourselves. </p>
-</li>
-</ul>
-<h1 id="presentation">Presentation</h1>
-<p>Visualization of results processed by ILEE.</p>
-<p><img alt="demo1.PNG" src="https://github.com/phylars/image_host/blob/main/ILEE/demo1.PNG?raw=true" /></p>
-<p>Comparison of ILEE and other classic image segmentation approaches.</p>
-<p><img alt="demo2.PNG" src="https://github.com/phylars/image_host/blob/main/ILEE/demo2.PNG?raw=true" /></p>
-<p><img alt="demo3.PNG" src="https://github.com/phylars/image_host/blob/main/ILEE/demo3.PNG?raw=true" /></p>
+                <h1 id="your-help-in-need">Your Help in Need!</h1>
+<p>Since ILEE_CSK aims to boost accuracy and efficiency of image analysis of cytoskeleton, which should echoes the demand of the communittee, we are very happy to learn critical information of related image process algorithms, bugs, and your demand. You are welcomed to send an email to announce any of the following issues: lipai@msu.edu</p>
+<p>This page will be continuously renewed parallel to our library update. </p>
+<p><br/></p>
+<h2 id="a-general-sparse-linear-solver-on-gpu">A general sparse linear solver on GPU</h2>
+<p>ILEE need a sparse linear solver, which means GPU acceleration make it 10-20 times faster. For GPU acceleration mode, we are using MATLAB and CUDA, but it requires users to have MATLAB license and a CUDA-compatible GPU, which is not general enough. While we did some search on the Internet, we could not find any GPU based linear solver that is general and open-sourced. We wish you can recommend us anything that works as a better substitute for our current solution. We prefer to use conditional gradient (CG) algorithm for linear solve because we found it has the best performance in our tests. </p>
+<p><br/></p>
+<h2 id="upgrading-skeletonization-algorithm">Upgrading skeletonization algorithm</h2>
+<p>Many cytoskeleton indices depends on its skeleton image (don't confuse with "cytoskeleton", it means image rendered by thinning binary image to one-pixel but remain topological structure.). We are using the <a href="https://scikit-image.org/docs/dev/auto_examples/edges/plot_skeleton.html">Skeletonize</a> function in the <a href="https://scikit-image.org/">scikit-image</a>, which is very slow in 3D mode. It is perhaps because this function uses a single process on CPU (mine is 10-20% CPU usage), and therefore the computational power is not used efficiently. We would like you to recommend us a new function/library for pixel/voxel image skeletonization that uses a faster algorithm or multi-processing mode.</p>
+<p><br/></p>
+<h2 id="bug-report">Bug report</h2>
+<p>If you follows our tutorial/API and find bugs, please report to us. Better send us your image sample and tell us how you process the sample in detail so that we can repeat.</p>
+<p><br/></p>
+<h2 id="tell-us-your-demand">Tell us your demand</h2>
+<p>If our algorithm does not fulfil your demand, you are welcomed to tell us what you wish to learn from your cytoskeleton image of your research or what functions you expect to have for our library. We aim to incorporate all possible functions for the interest of the community and therefore need your input. </p>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../API/" class="btn btn-neutral" title="API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -147,6 +153,8 @@
   <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
+      
+        <span><a href="../API/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
     </span>

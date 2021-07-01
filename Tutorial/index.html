@@ -1,112 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Tutorial - ILEE_CSK</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Tutorial - ILEE_CSK</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-        <script src="../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
-    </head>
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Tutorial";
+    var mkdocs_page_input_path = "Tutorial.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
 
-    <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="..">ILEE_CSK</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<body class="wy-body-for-nav" role="document">
 
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href="../Home/" class="nav-link">Home</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../API/" class="nav-link">API</a>
-                            </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Tutorial</a>
-                            </li>
-                        </ul>
-
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../API/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
+  <div class="wy-grid-for-nav">
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#for-users-without-python-experience" class="nav-link">For users without Python experience</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#installing-ilee_csk" class="nav-link">Installing ILEE_CSK</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#installing-napari-for-3d-visualization" class="nav-link">Installing napari for 3D visualization</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#cytoskeleton-indices-computation" class="nav-link">Cytoskeleton indices computation</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#batch-processing-all-samples-in-a-document" class="nav-link">Batch processing all samples in a document</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-        </ul>
-    </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ILEE_CSK</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
 
-<h1 id="for-users-without-python-experience">For users without Python experience</h1>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Tutorial</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../API/">API</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Help%20needed/">Help Needed</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ILEE_CSK</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Tutorial</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="for-users-without-python-experience">For users without Python experience</h1>
 <p>ILEE_CSK is a python library and therefore we need to setup your python environment to process your data. Don't be afraid, should not be difficult.</p>
 <p>First, we need to install your python environment. For novice, we only recommend the one-step simplest way: <a href="https://www.anaconda.com/">Anaconda</a>. Please find the Anaconda installer that applies to your computer at https://www.anaconda.com/products/individual, and install it. Anaconda has a python environment has most of the libraries we need, so you do not need to install other libraries. </p>
 <p>Anaconda has a well-established Python IDE (Integrated development environment) <a href="https://www.spyder-ide.org/">Spyder</a> optimized for scientific computation and visualization. Please just regard it as a powerful calculator in your computer. When you installed our library,  you need to open Spyder to compute your samples. You can either search Spyder in your apps or open Anaconda Navigator to open it. Typically it looks like this:</p>
@@ -117,19 +108,26 @@
 <p><img alt="cmd1.png" src="https://github.com/phylars/image_host/blob/main/ILEE/cmd1.png?raw=true" /></p>
 <p>This is the interface where you can install any library. We use use it for library installing purposes, which should not be confounded with Spyder.</p>
 <h1 id="installing-ilee_csk">Installing ILEE_CSK</h1>
-<p>ILEE_CSK is available at pipy...</p>
+<p><br/></p>
+<p>ILEE_CSK is available on PyPI:</p>
 <pre><code class="language-sh">pip install ILEE_CSK
 </code></pre>
-<p>ILEE_CSK supports MATLAB-based GPU acceleration for native-3D image processing. If you have MATLAB license as well as CUDA GPU, and wish to proceed native-3D mode. Please download......</p>
+<p>ILEE_CSK supports MATLAB-based GPU acceleration for native-3D image processing. If you have MATLAB license as well as CUDA GPU, and wish to proceed native-3D mode. Please refer to <em>Batch processing by 3D mode on GPU</em> section in the Tutorial page. </p>
+<p><br/></p>
 <h1 id="installing-napari-for-3d-visualization">Installing napari for 3D visualization</h1>
+<p><br/></p>
 <p>The <a href="https://napari.org/">napari</a> is a multi-dimensional image viewer for python. It is a outstanding tool for confocal image visualization, especially for visualizing 3D dnapariata structure. We just recommend you directly follow their documentation to install it: https://napari.org/.</p>
+<p><br/></p>
 <h1 id="cytoskeleton-indices-computation">Cytoskeleton indices computation</h1>
+<p><br/></p>
 <h2 id="batch-processing-all-samples-in-a-document">Batch processing all samples in a document</h2>
 <p>Confocal images of cytoskeletons are generally taken as 3D stacks (Native 3D structure). Hereby we support batch processing of files of  3D stack. If your source images are already 2D, please check our API to process it individually.</p>
+<p><br/></p>
 <h3 id="generating-tiff-raw-images-by-fiji-imagej">Generating TIFF raw images by FIJI (ImageJ).</h3>
 <p><a href="https://fiji.sc/">FIJI</a> is a java-based free-to-use image processing GUI software with optimized for scientific use. If you don't have it, please download it and congratulations -- you have found a great treasure. Put all of your confocal image files in the same document. Open FIJI, select process-&gt;batch-&gt;convert</p>
 <p><img alt="fiji_batch.png" src="https://github.com/phylars/image_host/blob/main/ILEE/fiji_batch.png?raw=true" /></p>
 <p>Input is the document of your raw confocal-format files; output is wherever you want. Press convert, and we just get what we need for ILEE. Please note that output format MUST BE tiff, interpolation MUST be None, and scale factor MUST BE 1. This make sure your tiff is literally raw data. </p>
+<p><br/></p>
 <h3 id="find-your-channel-index-and-k2">Find your channel index and K2</h3>
 <p>You need to learn the data structure of the raw TIFF files you generated to finish parameter setting. Please get the path of one of your generated TIFF file and read it by skimage.io, such as:</p>
 <pre><code class="language-python">image_example_path = 'D:/my_experiments/generated_TIFF_images/sample_001.tiff'
@@ -158,106 +156,112 @@ with napari.gui_qt():
 folder = 'D:/my_experiments/generated_TIFF_images/'
 the_optimal_K2 = ILEE_CSK.opt_k2(folder_path = folder, target_channel = 0)
 </code></pre>
+<p>it is also possible that you have only 1 channel when you take confocal images, in which case, the input data structure may be a 3D array rather than 4D, so you need to set target_channel to None.</p>
+<pre><code class="language-python">the_optimal_K2 = ILEE_CSK.opt_k2(folder_path = folder, target_channel = None)
+</code></pre>
+<p><br/></p>
 <h3 id="batch-processing-by-2d-mode">Batch processing by 2D mode</h3>
 <p>After you determine the optimal K2 for you sample pool. Using the same fluorescence channel index, you can finish batch processing by just one step:</p>
 <pre><code class="language-python">results = ILEE_CSK.analyze_document_2D (folder_path = folder, obj_channel = 0, k2 = the_optimal_K2)
 </code></pre>
-<p>Please read the API to learn about the parameters. </p>
+<p>Please read the API to learn about the parameters. The obj_channel should be your targeted channel index, or None if imported Tiffs are 3D array. </p>
 <p>The "results" will be a table in format of Pandas dataframe, which you can check and process within python IDE. You may also want to directly output it as an Excel file, which can be done as such:</p>
 <pre><code class="language-python">result.to_excel('D:/my_experiments/generated_TIFF_images/analysis_result.xlsx')
 </code></pre>
+<p><br/></p>
 <h3 id="batch-processing-by-3d-mode-on-cpu">Batch processing by 3D mode on CPU</h3>
 <p>Batch processing on 3D mode use a similar pipeline function that is easy to use. We recommend no less than 16G memory, otherwise it may fail. You need to manually check your voxel size on x/y- and z-axis by μm, if you don't remember. A simple way is to check by FIJI (ImageJ); after open one of you samples, select image-&gt;Show Info to get it. In the example above, my voxel size is 0.132μm on x/y-axis and 0.5μm on z-axis. </p>
 <p><img alt="fiji_info.png" src="https://github.com/phylars/image_host/blob/main/ILEE/fiji_info.png?raw=true" /></p>
 <p>You can use batch processing function on 3D mode. I will use my image information as an example:</p>
 <pre><code class="language-python">results = ILEE_CSK.analyze_document_3D (folder_path = folder,
-                                        obj_channel = 0, 
+                                        obj_channel = 0, #example value; should be your cytoskeleton channel
                                         k2 = the_optimal_K2, 
-                                        xy_unit = 0.132, 
-                                        z_unit = 0.5,     
-                                        pixel_size = 0.132, 
+                                        xy_unit = 0.132, #example value
+                                        z_unit = 0.5, #example value
+                                        pixel_size = 0.132, #example value
                                         single_k = True, 
                                         use_GPU = False)
 </code></pre>
 <p>The setting above uses CPU mode, which is very slow (5~7min per 25x800x800 image). Therefore, we highly recommend to turn on single_k mode to save half of the time with acceptable sacrifice at accuracy on thick filaments.</p>
-<h3 id="batch-processing-by-3d-mode-on-gpu">Batch processing by 3D mode on GPU</h3></div>
+<h3 id="batch-processing-by-3d-mode-on-gpu">Batch processing by 3D mode on GPU</h3>
+<p>If you have a valid GPU and MATLAB accessibility, we highly recommend you use GPU mode to conduct 3D mode computation. You need to make sure that your MATLAB have corresponding Support Packages: https://www.mathworks.com/help/gpucoder/gs/install-prerequisites.html.</p>
+<p>Also you need to install CUDA Toolkit: https://developer.nvidia.com/cuda-gpus. I did not try whether AMD GPU works. If possible, you are welcomed to recommend me how to make this happen. </p>
+<p>Finally, you need to install MATLAB Engine module for your python environment: https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html. If you uses Anaconda, please make sure you are using the Anaconda Prompt rather than your Apple or Windows cmd. </p>
+<p>When you have your MATLAB Engine module (matlab.engine) installed, you can see that printed:</p>
+<p><img alt="" src="https://github.com/phylars/image_host/blob/main/ILEE/matlab%20installed.PNG?raw=true" /></p>
+<p>Otherwise, it will tell you:</p>
+<p><img alt="" src="https://github.com/phylars/image_host/blob/main/ILEE/matlab%20not%20installed.PNG?raw=true" /></p>
+<p>But it is not an system error and all other functions will be fine. </p>
+<p>If you MATLAB Engine is recognized, then you can run batch processing on 3D mode with your GPU by setting use_GPU = True:</p>
+<pre><code class="language-python">results = ILEE_CSK.analyze_document_3D (folder_path = folder,
+                                        obj_channel = 0, #example value; should be your cytoskeleton channel
+                                        k2 = the_optimal_K2, 
+                                        xy_unit = 0.132, #example value
+                                        z_unit = 0.5, #example value
+                                        pixel_size = 0.132, #example value
+                                        single_k = True, 
+                                        use_GPU = True)
+</code></pre>
+<p>This mode additonally requires an temporary directory to save your image and matrix data. The default path is 'D:/MATLAB_temp' and is automatically set. If you do not have Disk D:/ or just want to change it by all means, you can change it by:</p>
+<pre><code class="language-python">ILEE_CSK.temp_directory = 'your_preferred_path'
+</code></pre>
+<p><br/></p>
+<h2 id="processing-single-sample">Processing single sample</h2>
+<p>Please refer to our API where we discribed functions for ILEE thresholding and index compuation for single image sample.  </p>
+<p><br/></p>
+<h1 id="data-visualization">Data visualization</h1>
+<p>....</p>
+              
             </div>
-        </div>
-
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>
-            var base_url = "..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="../js/base.js" defer></script>
-        <script src="../search/main.js" defer></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../API/" class="btn btn-neutral float-right" title="API">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
         </div>
-    </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../API/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
 </div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
-    </body>
+</body>
 </html>
