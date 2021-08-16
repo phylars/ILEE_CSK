@@ -122,7 +122,7 @@
     <ul class="nav bs-sidenav">
         <li class="first-level active"><a href="#for-users-without-python-experience">For users without Python experience</a></li>
         <li class="first-level "><a href="#installing-ilee_csk">Installing ILEE_CSK</a></li>
-        <li class="first-level "><a href="#installing-napari-for-3d-visualization">Installing napari for 3D visualization</a></li>
+        <li class="first-level "><a href="#optional-installing-napari-for-3d-visualization">(optional) Installing napari for 3D visualization</a></li>
         <li class="first-level "><a href="#cytoskeleton-indices-computation">Cytoskeleton indices computation</a></li>
             <li class="second-level"><a href="#batch-processing-all-samples-in-a-document">Batch processing all samples in a document</a></li>
                 
@@ -134,91 +134,95 @@
             <li class="second-level"><a href="#processing-single-sample">Processing single sample</a></li>
                 
         <li class="first-level "><a href="#image-visualization">Image visualization</a></li>
-            <li class="second-level"><a href="#checking-difference-image-or-binary-image">checking difference image or binary image</a></li>
+            <li class="second-level"><a href="#checking-difference-image-or-binary-image">Checking difference image or binary image</a></li>
                 
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
 <h1 id="for-users-without-python-experience">For users without Python experience</h1>
-<p>ILEE_CSK is a python library and therefore we need to setup your python environment to process your data. Don't be afraid, should not be difficult.</p>
-<p>First, we need to install your python environment. For novice, we only recommend the one-step simplest way: <a href="https://www.anaconda.com/">Anaconda</a>. Please find the Anaconda installer that applies to your computer at https://www.anaconda.com/products/individual, and install it. Anaconda has a python environment has most of the libraries we need, so you do not need to install other libraries. </p>
-<p>Anaconda has a well-established Python IDE (Integrated development environment) <a href="https://www.spyder-ide.org/">Spyder</a> optimized for scientific computation and visualization. Please just regard it as a powerful calculator in your computer. When you installed our library,  you need to open Spyder to compute your samples. You can either search Spyder in your apps or open Anaconda Navigator to open it. Typically it looks like this:</p>
+<p>ILEE_CSK is a Python library, which means you need to set up a Python environment to process your data.</p>
+<p>For beginners without any Python experience, we recommend the one-step way: <a href="https://www.anaconda.com/">Anaconda</a>. Please find the Anaconda installer that applies to your system at https://www.anaconda.com/products/individual, and install. The default environment provided by Anaconda also includes most of the libraries you need to process your data.</p>
+<p>Anaconda is a well-established Python IDE (Integrated Development Environment); Spyder is for scientific calculation and visualization; therefore, you should regard it as a powerful calculator. When you have completed installing the library, open Spyder to compute your samples. You can use either the search engine on Spyder in your apps or open the Anaconda Navigator. An example is provided below:</p>
 <p><img alt="spyder.png" src="https://github.com/phylars/image_host/blob/main/ILEE/spyder.png?raw=true" /></p>
-<p>Since you need to install ILEE_CSK, you need to use commend lines. <u>Please note that you should <strong>NOT</strong> use your Windows or Apple command lines, but instead, please open Anaconda Prompt and enter the install commands you wants.</u> This makes your intended libraries installed in Anaconda environment particularly. </p>
-<p>You can either search Anaconda Prompt in your apps or open Anaconda Navigator to open it. It should look like this:</p>
+<p>Next, you need to install ILEE_CSK and are going to use command lines. <strong>Please note that you should NOT use Windows command lines, but instead, open the Anaconda Prompt and enter your install commands</strong>; this makes the intended libraries installed in the Anaconda environment rather than the windows default Python environment. </p>
+<p>You can either search Anaconda Prompt in your apps or use the Anaconda Navigator to open it. Here is a visual example of how it should look:</p>
 <p><img alt="cmd.png" src="https://github.com/phylars/image_host/blob/main/ILEE/cmd.png?raw=true" /></p>
 <p><img alt="cmd1.png" src="https://github.com/phylars/image_host/blob/main/ILEE/cmd1.png?raw=true" /></p>
-<p>This is the interface where you can install any library. We use use it for library installing purposes, which should not be confounded with Spyder.</p>
+<p>The photo above shows the interface where you can install any library. We use this library for installing purposes; do not use Spyder for installing purposes. </p>
+<p>After you open the Anaconda Prompt, please check the next step to install the ILEE_CSK library.</p>
 <hr />
 <h1 id="installing-ilee_csk">Installing ILEE_CSK</h1>
 <p><br/></p>
 <p>ILEE_CSK is available on PyPI:</p>
 <pre><code class="language-sh">pip install ILEE_CSK
 </code></pre>
-<p>ILEE_CSK supports MATLAB-based GPU acceleration for native-3D image processing. If you have MATLAB license as well as CUDA GPU, and wish to proceed native-3D mode. Please refer to <em>Batch processing by 3D mode on GPU</em> section in the Tutorial page. </p>
+<p>ILEE_CSK supports MATLAB-based GPU acceleration for native-3D image processing. If you have a MATLAB license and a CUDA GPU and wish to proceed with the 3D mode, please refer to <em>Batch processing by 3D mode on the GPU</em> section on the Tutorial page.</p>
 <hr />
 <p><br/></p>
-<h1 id="installing-napari-for-3d-visualization">Installing napari for 3D visualization</h1>
+<h1 id="optional-installing-napari-for-3d-visualization">(optional) Installing napari for 3D visualization</h1>
 <p><br/></p>
-<p>The <a href="https://napari.org/">napari</a> is a multi-dimensional image viewer for python. It is a outstanding tool for confocal image visualization, especially for visualizing 3D dnapariata structure. We just recommend you directly follow their documentation to install it: https://napari.org/.</p>
+<p>The <a href="https://napari.org/">napari</a> is a multi-dimensional image viewer for Python. It is an outstanding tool for confocal image visualization, especially for visualizing 3D images. We recommend you directly follow the instructions to install napari on their website at https://napari.org/.</p>
 <hr />
 <p><br/></p>
 <h1 id="cytoskeleton-indices-computation">Cytoskeleton indices computation</h1>
 <p><br/></p>
 <h2 id="batch-processing-all-samples-in-a-document">Batch processing all samples in a document</h2>
-<p>Confocal images of cytoskeletons are generally taken as 3D stacks (Native 3D structure). Hereby we support batch processing of files of  3D stack. If your source images are already 2D, please check our API to process it individually.</p>
+<p>Confocal images of cytoskeletons are usually taken as 3D stacks (Native 3D structure). The program supports batch processing of files starting from raw stack images in format of .TIFF regardless of whether you prefer 2D or 3D mode, which is our recommended way to process your data. If the source images are already 2D, please check the API to process the images individually.</p>
 <p><br/></p>
 <h3 id="generating-tiff-raw-images-by-fiji-imagej">Generating TIFF raw images by FIJI (ImageJ).</h3>
-<p><a href="https://fiji.sc/">FIJI</a> is a java-based free-to-use image processing GUI software with optimized for scientific use. If you don't have it, please download it and congratulations -- you have found a great treasure. Put all of your confocal image files in the same document. Open FIJI, select process-&gt;batch-&gt;convert</p>
+<p><a href="https://fiji.sc/">FIJI</a> is a Java-based free-to-use image processing GUI software that is optimized for scientific use. If you do not already have it installed, please install it onto your device. Be sure to put all your confocal image files in the same folder. Then open FIJI and select Process =&gt; Batch =&gt; Convert.</p>
 <p><img alt="fiji_batch.png" src="https://github.com/phylars/image_host/blob/main/ILEE/fiji_batch.png?raw=true" /></p>
-<p>Input is the document of your raw confocal-format files; output is wherever you want. Press convert, and we just get what we need for ILEE. Please note that output format MUST BE tiff, interpolation MUST be None, and scale factor MUST BE 1. This make sure your tiff is literally raw data. </p>
+<p>The Input folder is the one that contains your raw confocal-format files; the Output is the folder you would like to put in your generated TIFF files. Please note that output format <strong>MUST BE</strong> tiff, interpolation <strong>MUST</strong> be none, and scale factor <strong>MUST BE</strong> 1. This makes sure your tiff is raw data.</p>
 <p><br/></p>
 <h3 id="find-your-channel-index-and-k2">Find your channel index and K2</h3>
-<p>You need to learn the data structure of the raw TIFF files you generated to finish parameter setting. Please get the path of one of your generated TIFF file and read it by skimage.io, such as:</p>
+<p>To learn the data structure of the raw TIFF files you previously generated to finish parameter setting, please go to the path of one of the generated TIFF files and read it by skimage.io, such as:        </p>
 <pre><code class="language-python">image_example_path = 'D:/my_experiments/generated_TIFF_images/sample_001.tiff'
 from skimage import io
 img = io.imread(image_example_path)
 </code></pre>
-<p>Generally, img should be a 4D array, and one of the dimension with the smallest size among the four dimensions should be your fluorescence channel. (For Python novice, you can check the Spyder variable explorer on the column "size".) For example, when I use a Olympus confocal system and I gets a array with dimension size of (25, 3, 800, 800), which means (z, channel, x, y). Difference confocal system have these numbers occur at different order. Since you know how did you take the image by confocal, you can understand what these number means easily. <u>NOTE: Our batch processing pipeline requires your channel to be the dimension with the lowest size, and the second lowest to be z-axis resolution.</u> This applies to almost all of the cytoskeleton confocal images, because the number of channels is generally no greater than 5, with maximum 4 fluorescence channels plus a transmission channel, and z-stack number is usually greater than 5 to cover the total cell. If you have a abnormal data structure that does not apply, we wish to you inform us about what the structure is and why it is necessary, so that we may improve our algorithm. </p>
-<p>You need to figure out which of your channel is the cytoskeleton fluorescence channel you want to analyze. Generally, the channel order will be the same as your confocal setting, and be aware that Python index start from 0 instead of 1. For example, if I used channel 1 to see GFP-labeled actin, channel 2 to see chloroplast far-red light, and an additional transmission channel to see bright field, my objective index is supposed to be 0 (for channel 1). However, to clearly verify which one is your objective channel, you can try visualize their projected image:</p>
+<p>Generally, the img should be a 4D array, and the dimension with the smallest size amongst the four dimensions should be the fluorescence channel. (For Python novice, you can check the Spyder variable explorer on the column "size"). For example, when using an Olympus confocal system, a user can get an array out of our image with the dimension size of (25, 3, 800, 800), which means (z, channel, x, y). Different confocal systems have numbers that occur in different orders. </p>
+<p>NOTE: Our batch processing pipeline function requires the channel to be the dimension with the smallest size and the dimension with  the second lowest size to be z-axis resolution, which applies to most of the cytoskeleton confocal images. It is because the number of channels is generally no more significant than five, with a maximum of four fluorescence channels plus a transmission channel; the z-stack number is usually greater than five to cover the total cell. If there is an abnormal data structure, the batch processing function may not apply for the current version. We recommend you report your special case to us to help us improve the compatibility for the library. </p>
+<p>In order to figure out which of the channels is the cytoskeleton fluorescence channel, analyze. Generally, the channel order will be the same as the confocal setting and be aware that the Python index starts from 0 instead of 1. For example, when using channel 1 to see GFP-labeled actin, channel 2 to see chloroplast far-red light, and an added transmission channel to see the bright field, the objective index should be 0 (channel 1). However, to verify which one is the objective channel, try visualizing their projected image:</p>
+<p>To run batch processing, you need to figure out which of your channel is the cytoskeleton fluorescence channel you want to analyze. Generally, the channel order will be the same as the confocal setting and be aware that the Python array index starts from 0 instead of 1. For example, if your fist channel is GFP-labeled actin, and the second channel is chloroplast far-red light, with an third transmission channel to see the bright field, then the objective index should be 0 (for the first channel). However, we highly recommend you verify the channel index. To do this, you can try visualizing the projected image:</p>
 <pre><code class="language-python">import matplotlib.pyplot as plt
-img = img[:,0,:,:] #You can change this &quot;0&quot; to the other channel indexes you want to check.
+img = img[:,0,:,:] # This is assuming my data structure is (25, 3, 800, 800) and I guess 0 is my actin channel index. You should locate your channel dimension and use the channel indexes you want to check.
 img = np.amax(img, axis=0) #In my case, my first dimension (index 0) is z-axis, if your z-axis is another dimension, please change accordingly.
 #run this three line together:
 plt.figure(figsize = (18, 18))
 plt.imshow(img)
 plt.show()
 </code></pre>
-<p>Another way is directly see the 3D voxel image by napari:</p>
+<p>Another way is to directly see the 3D voxel image by napari:</p>
 <pre><code class="language-python">import napari
 with napari.gui_qt():
     viewer = napari.Viewer()
     for i in range(3): #This 3 is the total number of your channels. Change accordingly.
         viewer.add_image(img[:,i,:,:])   
 </code></pre>
-<p>When you learn your data structure, you can start to evaluate your K2 for the batch using the function <strong>opt_k2</strong>. For example, if my index of cytoskeleton fluorescence channel is 0, you can do like such:</p>
+<p><br/></p>
+<p>After figuring out your data structure and the index of your objective channel, you can start to evaluate your K2 for the sample batch using the function <strong>opt_k2</strong>. For example, if my index of cytoskeleton fluorescence channel is 0, you can do like such:</p>
 <pre><code class="language-python">import ILEE_CSK
 folder = 'D:/my_experiments/generated_TIFF_images/'
 the_optimal_K2 = ILEE_CSK.opt_k2(folder_path = folder, target_channel = 0)
 </code></pre>
-<p>it is also possible that you have only 1 channel when you take confocal images, in which case, the input data structure may be a 3D array rather than 4D, so you need to set target_channel to None.</p>
+<p>It is also possible to only have one channel when taking confocal images, in which case, the input data structure may be a 3D array rather than 4D. In that case, it needs to set target_channel to None.</p>
 <pre><code class="language-python">the_optimal_K2 = ILEE_CSK.opt_k2(folder_path = folder, target_channel = None)
 </code></pre>
 <p><br/></p>
 <h3 id="batch-processing-by-2d-mode">Batch processing by 2D mode</h3>
-<p>After you determine the optimal K2 for you sample pool. Using the same fluorescence channel index, you can finish batch processing by just one step:</p>
+<p>After determining the optimal K2 for the sample pool, you can finish batch processing by one step using the same fluorescence channel index:</p>
 <pre><code class="language-python">results = ILEE_CSK.analyze_document_2D (folder_path = folder, obj_channel = 0, k2 = the_optimal_K2)
 </code></pre>
 <p>Please read the API to learn about the parameters. The obj_channel should be your targeted channel index, or None if imported Tiffs are 3D array. </p>
-<p>The "results" will be a table in format of Pandas dataframe, which you can check and process within python IDE. You may also want to directly output it as an Excel file, which can be done as such:</p>
+<p>The "results" will be a table in format of Pandas DataFrame, which you can check and process within python IDE. You may also want to directly output it as an Excel file, which can be done as such:</p>
 <pre><code class="language-python">result.to_excel('D:/my_experiments/generated_TIFF_images/analysis_result.xlsx')
 </code></pre>
 <p><br/></p>
 <h3 id="batch-processing-by-3d-mode-on-cpu">Batch processing by 3D mode on CPU</h3>
-<p>Batch processing on 3D mode use a similar pipeline function that is easy to use. We recommend no less than 16G memory, otherwise it may fail. You need to manually check your voxel size on x/y- and z-axis by μm, if you don't remember. A simple way is to check by FIJI (ImageJ); after open one of you samples, select image-&gt;Show Info to get it. In the example above, my voxel size is 0.132μm on x/y-axis and 0.5μm on z-axis. </p>
+<p>Batch processing on 3D mode use a similar pipeline function that is easy to use. We recommend no less than 16G memory, otherwise it may fail. You need to manually check your voxel size on x/y- and z-axis by μm, if you don't remember. A straightforward way is to check by FIJI (ImageJ); after open one of you samples, select Image =&gt; Show Info to achieve it. In the example above, my voxel size is 0.132μm on the x/y-axis and 0.5μm on the z-axis. </p>
 <p><img alt="fiji_info.png" src="https://github.com/phylars/image_host/blob/main/ILEE/fiji_info.png?raw=true" /></p>
-<p>You can use batch processing function on 3D mode. I will use my image information as an example:</p>
+<p>Then, initiate the batch processing function in 3D mode using the channel index, K2, and voxel size you have obtained. Here is an example using the image information of mine:</p>
 <pre><code class="language-python">results = ILEE_CSK.analyze_document_3D (folder_path = folder,
                                         obj_channel = 0, #example value; should be your cytoskeleton channel
                                         k2 = the_optimal_K2, 
@@ -228,17 +232,18 @@ the_optimal_K2 = ILEE_CSK.opt_k2(folder_path = folder, target_channel = 0)
                                         single_k = True, 
                                         use_GPU = False)
 </code></pre>
-<p>The setting above uses CPU mode, which is very slow (5~7min per 25x800x800 image). Therefore, we highly recommend to turn on single_k mode to save half of the time with acceptable sacrifice at accuracy on thick filaments.</p>
+<p>The setting above uses CPU mode, which is very slow (5~7min per 25x800x800 image on i7-6700K). Therefore, we highly recommend turn on single_k mode to save half of the time with an acceptable sacrifice at accuracy on thick filaments.</p>
+<p><br/></p>
 <h3 id="batch-processing-by-3d-mode-on-gpu">Batch processing by 3D mode on GPU</h3>
-<p>If you have a valid GPU and MATLAB accessibility, we highly recommend you use GPU mode to conduct 3D mode computation. You need to make sure that your MATLAB have corresponding Support Packages: https://www.mathworks.com/help/gpucoder/gs/install-prerequisites.html.</p>
-<p>Also you need to install CUDA Toolkit: https://developer.nvidia.com/cuda-gpus. I did not try whether AMD GPU works. If possible, you are welcomed to recommend me how to make this happen. </p>
-<p>Finally, you need to install MATLAB Engine module for your python environment: https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html. If you uses Anaconda, please make sure you are using the Anaconda Prompt rather than your Apple or Windows cmd. </p>
-<p>When you have your MATLAB Engine module (matlab.engine) installed, you can see that printed:</p>
+<p>If a valid GPU and MATLAB are accessible, we highly recommend using GPU mode to conduct 3D mode computation. Make sure the MATLAB includes the necessary Support Packages: https://www.mathworks.com/help/gpucoder/gs/install-prerequisites.html.</p>
+<p>The CUDA Toolkit can be installed at https://developer.nvidia.com/cuda-gpus, if you did not. We did not test if AMD GPU works on MATLAB. You are welcomed to tell us about your AMD GPU. </p>
+<p>Finally, please install the MATLAB Engine module for the python environment: https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html. When using the Anaconda, please make sure to use the Anaconda Prompt rather than the Apple or Windows cmd.</p>
+<p>When ILEE_CSK is imported with MATLAB Engine module (matlab.engine) installed, a conformation message will be printed:</p>
 <p><img alt="" src="https://github.com/phylars/image_host/blob/main/ILEE/matlab%20installed.PNG?raw=true" /></p>
-<p>Otherwise, it will tell you:</p>
+<p>Otherwise, it will say:</p>
 <p><img alt="" src="https://github.com/phylars/image_host/blob/main/ILEE/matlab%20not%20installed.PNG?raw=true" /></p>
-<p>But it is not an system error and all other functions will be fine. </p>
-<p>If you MATLAB Engine is recognized, then you can run batch processing on 3D mode with your GPU by setting use_GPU = True:</p>
+<p>However, it is not a system error, and all the other functions will be fine.</p>
+<p>If the MATLAB Engine is recognized, then run batch processing on 3D mode with the GPU by setting use_GPU = True:</p>
 <pre><code class="language-python">results = ILEE_CSK.analyze_document_3D (folder_path = folder,
                                         obj_channel = 0, #example value; should be your cytoskeleton channel
                                         k2 = the_optimal_K2, 
@@ -248,13 +253,13 @@ the_optimal_K2 = ILEE_CSK.opt_k2(folder_path = folder, target_channel = 0)
                                         single_k = True, 
                                         use_GPU = True)
 </code></pre>
-<p>This mode additonally requires an temporary directory to save your image and matrix data. The default path is 'D:/MATLAB_temp' and is automatically set. If you do not have Disk D:/ or just want to change it by all means, you can change it by:</p>
+<p>This mode additionally requires a temporary directory to save the image and matrix data. The default path is 'D:/MATLAB_temp' and sets automatically. If you do not have a Disk D:/ or wants to change it, change it by:</p>
 <pre><code class="language-python">ILEE_CSK.temp_directory = 'your_preferred_path'
 </code></pre>
 <p><br/></p>
 <h2 id="processing-single-sample">Processing single sample</h2>
-<p>Please refer to our API where we discribed functions for ILEE thresholding and index compuation for single image sample.  </p>
-<p>While it can be very flexible, here I provide examples of how single image files can be processed. This is a 2D mode example:</p>
+<p>Please refer to our API where we discribe functions for ILEE thresholding and index compuation for single image sample.  </p>
+<p>While it can be very flexible, here are examples of how single image files can be processed. This is a 2D mode example:</p>
 <pre><code class="language-python">import ILEE_CSK
 from skimage import io
 import numpy as np
@@ -274,14 +279,14 @@ img = io.imread('your_path') #substitute to your tiff file path
 img = ILEE_CSK.rearrange_image_dimension(img, target_channel = 0) #Assuming that my array is 4D (including channel demension and my objective channel is 0)
 img = img-img.min() #cut off useless values for LUT
 img = img.astype('float') #make it float data type
-img_dif_ori = ILEE_CSK.ILEE_3d(img, xy_unit = 0.053, z_unit = 0.16, k1 = 2.5, k2 = 666, single_k1 = False, use_matlab = True, use_matlabGPU = True, gauss_dif = True) #I assume I have a CUDA graphic card. Set your own unit.
+img_dif_ori = ILEE_CSK.ILEE_3d(img, xy_unit = 0.053, z_unit = 0.16, k1 = 2.5, k2 = 666, single_k1 = False, use_matlab = True, use_matlabGPU = True, gauss_dif = True) #I assume I have a CUDA graphic card. Set your own voxel size.
 my_data = ILEE_CSK.analyze_actin_3d_standard (img = img, img_dif_ori = img_dif_ori, xy_unit = 0.053, z_unit = 0.16)
 </code></pre>
 <hr />
 <p><br/></p>
 <h1 id="image-visualization">Image visualization</h1>
-<h2 id="checking-difference-image-or-binary-image">checking difference image or binary image</h2>
-<p>"Difference image" means the pre-processed input image minus the threshold image -- literally to see the contrast level between you cytoskeleton sample and . Binary image means your segmented cytoskeleton fraction, where 1 (True) means it is actually cytoskeleton and 0 (False) means not. Here is an example how to visualize it for 2D mode:</p>
+<h2 id="checking-difference-image-or-binary-image">Checking difference image or binary image</h2>
+<p>"Difference image" means the pre-processed input image minus the threshold image -- literally to see the contrast level between the input cytoskeleton image and the threshold image. Binary image means the segmented cytoskeleton fraction, where 1 (True) means the pixel is judged as cytoskeleton and 0 (False) means not. Below is an example how to visualize it for 2D mode:</p>
 <pre><code class="language-python">import ILEE_CSK
 from skimage import io
 import numpy as np
@@ -307,7 +312,8 @@ plt.imshow(img_binary)
 plt.axis('off')
 plt.show()
 </code></pre>
-<p>Here is an example for 3D mode, where we use Napari for 3D visualization:</p>
+<p><br/></p>
+<p>Below is an example for 3D mode, napari is used for 3D visualization:</p>
 <pre><code class="language-python">import ILEE_CSK
 from skimage import io
 import numpy as np

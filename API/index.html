@@ -134,55 +134,55 @@
 <h2 id="general-batch-processing-pipeline">General batch-processing pipeline</h2>
 <p><br/></p>
 <p><strong>opt_k2 (folder_path, target_channel = None):</strong></p>
-<p>This functions calculates the optimal K2 for a batch of samples (raw TIFF files) to be analyzed. Please include all samples from different groups to be compared into the same document.</p>
+<p>This functions calculates the optimal K2 for a batch of samples (raw TIFF files) to be analyzed. Please include all samples of different categorical groups to be compared into the same folder.</p>
 <p>Parameters:</p>
 <p>folder_path : string, a local path of your image samples. The final document name should contain an "/" in the end, for example, folder_path = 'D:/experiment/all my samples/'</p>
-<p>target_channel : int, optional. <u>It should be an provided int for most of the situations.</u> If your raw TIFF file does not have the channel dimension, please use default.</p>
+<p>target_channel : int, optional. <u>It should be an provided int for most of the situations.</u> If your raw TIFF file does not have the channel dimension, please use default None.</p>
 <p>Returns:</p>
-<p>K2: float, your estimated optimal K2 for a total batch of sample for comparison</p>
+<p>K2: float, the estimated optimal K2 for the total batch of sample for comparison</p>
 <p><br/></p>
 <p><strong>analyze_document_2D (folder_path, obj_channel, k2, pixel_size = 1):</strong></p>
-<p>Process and analyze all the raw tiff samples in your document by 2D mode and output the result as a table (dataframe). All images are automatically transformed to 12 bit to be compatible. In 2D mode, K1 = 2.5.</p>
+<p>Process and analyze all the raw tiff samples in the folder by 2D mode and output the result as a table (Pandas DataFrame). All images are linearly transformed to 12-bit to be compatible. In 2D mode, K1 = 2.5.</p>
 <p>Parameters:</p>
 <p>folder_path : string, a local path of your image samples. The final document name should contain an "/" in the end, for example, folder_path = 'D:/experiment/all my samples/'</p>
-<p>obj_channel : int. Your channel index of cytoskeleton fluoresence in the 4D array read from raw TIFF</p>
-<p>k2 : number. The universal K2 you set. Recommend use the optimal K2 calculated by the function opt_k2</p>
-<p>pixel_size : number, optional. The physical lenghth unit of your pixel, by micrometer (μm). The default is 1. If you set it into the real pixel size, the unit "PU" in your output table should be considered as μm.</p>
+<p>obj_channel : int. The channel index of cytoskeleton fluoresence in the 4D array read from raw TIFF</p>
+<p>k2 : number. The universal K2. Recommend use the optimal K2 calculated by the function opt_k2</p>
+<p>pixel_size : number, optional. The physical lenghth unit of your pixel, by micrometer (μm). The default is 1. If you set it into the real pixel size, the unit "PU" in the output table should be regarded as μm.</p>
 <p>Returns:</p>
-<p>Pandas dataframe, all cytoskeleton indices. You can process it inside python IDE or export it as excel file. </p>
+<p>Pandas DataFrame, all cytoskeleton indices. It can be processed inside python IDE or export it as excel file. </p>
 <p><br/></p>
 <p><strong>analyze_document_3D (folder_path, obj_channel, k2, xy_unit, z_unit, pixel_size = 1, single_k = True, use_GPU = False):</strong></p>
-<p>Process and analyze all the raw tiff samples in your document in 3D mode and output the result as a table (dataframe). All images are automatically transformed to 12 bit to be compatible. Please note that it can be slow if the MATLAB-based GPU acceleration is not available. In 3D mode, K1 = 10^((log10(2.5)+log10(K2))/2).</p>
+<p>Process and analyze all the raw tiff samples in the folder by 3D mode and output the result as a table (dataframe). All images are automatically transformed to 12-bit to be compatible. Please note that it can be slow if the MATLAB-based GPU acceleration is not available. In 3D mode, K1 = 10^((log10(2.5)+log10(K2))/2).</p>
 <p>Parameters</p>
 <p>folder_path : string, a local path of your image samples. The final document name should contain an "/" in the end, for example, folder_path = 'D:/experiment/all my samples/'</p>
 <p>obj_channel : int, your channel index of cytoskeleton fluoresence in the 4D array read from raw TIFF.</p>
-<p>k2 : number, the universal K2 you set. Recommend use the optimal K2 calculated by the function opt_k2.</p>
+<p>k2 : number, the universal K2. Recommend use the optimal K2 calculated by the function opt_k2.</p>
 <p>xy_unit : number, the unit size of x- and y-axis by μm. Please check using ImageJ.</p>
-<p>z_unit : number, the unit size of z-axis by μm, which is also your step size of stack imaging. Please check using ImageJ.</p>
+<p>z_unit : number, the unit size of z-axis by μm, which is also the step size of stack imaging. Please check using ImageJ.</p>
 <p>pixel_size : number, optional. The physical lenghth unit (on x- and y-axis) of your voxel, by micrometer (μm). The default is 1. If you set it into the real pixel size, it should be equal to the parameter xy_unit, and the unit "PU" in your output table should be considered as μm.</p>
-<p>single_k : bool, optional. Whether to use single-K mode (use only K1) to save time. The default is True.</p>
+<p>single_k : bool, optional. Whether to use single-K mode (use only K1, see above) to save time. The default is True.</p>
 <p>use_GPU : bool, optional. Whether to activate GPU acceleration. We highly recommend you turn it on if you have MATLAB and compatible GPU. The default is False.</p>
 <p>Returns</p>
-<p>pandas dataframe, all cytoskeleton indices. You can process it inside python IDE or export it as excel file.</p>
+<p>Pandas DataFrame, all cytoskeleton indices. You can process it inside python IDE or export it as excel file.</p>
 <p><br/></p>
 <hr />
 <h2 id="processing-individual-sample">Processing individual sample</h2>
 <p><br/></p>
 <p><strong>rearrange_image_dimension (img, target_channel = None):</strong></p>
-<p>Transform your image array of any demension order (most likely x(height)-y(width)-z(stack)-channel or channel-x-y-z structure, depending on your confocal microscope) into z-x-y array with your object channel.This function depends on sorting, so your channel number must be lower than your stack number, and your stack number (z-resolution) must be lower than your x and y resolution.</p>
+<p>Transform your image array of any dimension order (most likely x(height)-y(width)-z(stack)-channel or channel-x-y-z structure, depending on your confocal microscope) into z-x-y array of your object channel only. This function depends on sorting, so your channel number must be lower than your stack number, and your stack number (z-resolution) must be lower than your x and y resolution.</p>
 <p>Parameters</p>
 <p>img : 3D or 4D array, the image read from a tiff file by skimage.io</p>
-<p>target_channel : int, your cytoskeleton fluorescence channel index. If img is 3D array (only one channel, which is your cytoskeleton), target_channel must be None.</p>
+<p>target_channel : int, the cytoskeleton fluorescence channel index. If img is 3D array (only one channel, which is your cytoskeleton), target_channel must be None.</p>
 <p>Returns</p>
 <p>3D array, the image of your object channel extracted from TIFF-generated 4D array, <u>in z-x-y format</u>. </p>
 <p><br/></p>
 <p><strong>ILEE_2d (img, k2, k1 = 2.5, pL_type = 'pL_8', gauss_dif = True):</strong></p>
-<p>In 2D mode, generate a difference image (raw_image - threshold_image) as ILEE output for downstream analysis or visualization.</p>
+<p>Generate a difference image (raw_image - threshold_image) as ILEE output for downstream analysis or visualization, using 2D mode.</p>
 <p>Parameters</p>
-<p>img : float 2D array. An image of z-axis maximum projection of your target channel or the 2D "raw" image. Values should be transformed into float type with 0-4095 dynamic range. For example, if you have a 12 bit int-type image, as a variable img, then it should be used as img.astype('float'); if you have a 16 bit int-type image, then you should transform img into img2 = img.astype('float')/65535*4095.</p>
-<p>k2 : a number; should be your pre-determined optimal K2 for comparison purpose. </p>
+<p>img : float 2D array. An image of z-axis maximum projection of your target channel or the 2D "raw" image. Values should be transformed into float type with 0-4095 dynamic range. For example, if you have a 12 bit int-type image, as img input, then it should be used as img.astype('float'); if you have a 16 bit int-type image, then you should transform img into img = img.astype('float')/65535*4095.</p>
+<p>k2 : a number; should be the pre-determined optimal K2 for comparison purpose. </p>
 <p>k1 : The default is 2.5, which can identify one-pixel-size filament.</p>
-<p>pL_type : string, Laplacian matrix type. The default and recommended is 'pL_8'. </p>
+<p>pL_type : string, Laplacian matrix type. The default and recommended is 'pL_8'. An alternative is 'pL_4'. Please read our publication for further information. </p>
 <p>gauss_dif : Bool, default is True; whether the difference image is slightly gaussian-blurred for smoother render.</p>
 <p>Returns</p>
 <p>float 2D array, the rendered 2D difference image. </p>
@@ -192,14 +192,14 @@
 <p>Parameters</p>
 <p>img : float 2D array. The input 2D image. </p>
 <p>img_dif : float 2D array. The difference image (raw_image - threshold_image) generated by ILEE_2d.</p>
-<p>pixel_size : number, optional. The physical lenghth unit of your pixel, by micrometer (μm). The default is 1. If you set it into the real pixel size, the unit "PU" in your output table should be considered as μm.</p>
+<p>pixel_size : number, optional. The physical lenghth unit of your pixel, by micrometer (μm). The default is 1. If it is set as the physical pixel size by μm, the unit "PU" in your output table should be regarded as μm as well.</p>
 <p>Returns</p>
 <p>pandas.DataFrame, all cytoskeleton indices of input sample: occupancy, linear_density, skewness, cv, Diameter_tdt, Diameter_sdt, sev_act, branching_act, anisotropy.</p>
 <p><br/></p>
 <p><strong>ILEE_3d (img, xy_unit, z_unit, k1, k2, single_k1 = False, use_matlab = False, use_matlabGPU = False, gauss_dif = True):</strong></p>
-<p>In 3D mode, generate a difference image (raw_image - threshold_image) as ILEE output for downstream analysis or visualization.</p>
+<p>Generate a difference image (raw_image - threshold_image) as ILEE output for downstream analysis or visualization, using 3D mode.</p>
 <p>Parameters</p>
-<p>img : 3D array. The input 3D image. Values should be transformed into float type with 0-4095 dynamic range. For example, if you have a 12 bit int-type image, as a variable img, then it should be used as img.astype('float'); if you have a 16 bit int-type image, then you should transform img into img2 = img.astype('float')/65535*4095. </p>
+<p>img : 3D array. The input 3D image. Values should be transformed into float type with 12-bit (0-4095) dynamic range. For example, if you have a 12 bit int-type image, as the img input, then it should be used as img.astype('float'); if you have a 16 bit int-type image, then you should transform img into img = img.astype('float')/65535*4095. </p>
 <p>xy_unit : number. The unit size of voxel on x- and y-axis by μm. Please check using ImageJ.</p>
 <p>z_unit : number. The unit size of voxel on z-axis by μm, which is also your step size of stack imaging. Please check using ImageJ.</p>
 <p>k1 : number. ILEE K1. for 3D mode we recommend K1 = 10^((log10(2.5)+log10(K2))/2).</p>
@@ -219,9 +219,9 @@
 <p>xy_unit : number. The unit size of voxel on x- and y-axis by μm. Please check using ImageJ.</p>
 <p>z_unit : number. The unit size of voxel on z-axis by μm, which is also your step size of stack imaging. Please check using ImageJ.</p>
 <p>oversampling_for_bundle : bool, optional. Whether to use oversampled image to calculated diameter indices. Recommend to turn on for accuracy. The default is True.</p>
-<p>pixel_size : number, optional. The physical lenghth unit (on x- and y-axis) of your voxel, by micrometer (μm). The default is 1. If you set it into the real pixel size, it should be equal to the parameter xy_unit, and the unit "PU" in your output table should be considered as μm.</p>
+<p>pixel_size : number, optional. The physical lenghth unit (on x- and y-axis) of your voxel, by micrometer (μm). The default is 1. If it is set as using physical length unit such as μm, it should be equal to the parameter xy_unit, and the unit "PU" in the output table should be considered as μm as well.</p>
 <p>Returns</p>
-<p>pandas.DataFrame, all cytoskeleton indices of input sample: occupancy, linear_density, skewness, cv, Diameter_tdt, Diameter_sdt, sev_act, branching_act, anisotropy.</p></div>
+<p>Pandas DataFrame, all cytoskeleton indices of input sample: occupancy, linear_density, skewness, cv, Diameter_tdt, Diameter_sdt, sev_act, branching_act, anisotropy.</p></div>
         
         
     </div>

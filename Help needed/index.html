@@ -121,9 +121,9 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="first-level active"><a href="#your-help-in-need">Your Help in Need!</a></li>
-            <li class="second-level"><a href="#a-general-sparse-linear-solver-on-gpu">A general sparse linear solver on GPU</a></li>
+            <li class="second-level"><a href="#a-general-sparse-linear-solver-on-gpu">A General Sparse Linear Solver on GPU</a></li>
                 
-            <li class="second-level"><a href="#upgrading-skeletonization-algorithm">Upgrading skeletonization algorithm</a></li>
+            <li class="second-level"><a href="#upgrading-skeletonization-algorithm">Upgrading Skeletonization Algorithm</a></li>
                 
             <li class="second-level"><a href="#bug-report">Bug report</a></li>
                 
@@ -134,20 +134,20 @@
         <div class="col-md-9" role="main">
 
 <h1 id="your-help-in-need">Your Help in Need!</h1>
-<p>Since ILEE_CSK aims to boost accuracy and efficiency of image analysis of cytoskeleton, which should echoes the demand of the community, we are very happy to learn critical information of related image process algorithms, bugs, and your demand. You are welcomed to send an email to announce any of the following issues: lipai@msu.edu</p>
-<p>This page will be continuously renewed parallel to our library update. </p>
+<p>Since ILEE_CSK aims to boost the accuracy and efficiency of image analysis of cytoskeleton, which should echo the community's demand, we are excited to learn critical information of related image process algorithms, bugs, and the demand. Please send us an email regarding any issues at lipai@msu.edu, or submit an issue in our GitHub home page (https://github.com/phylars/ILEE_CSK). </p>
+<p>This page will be continuously renewed parallel to our library update.</p>
 <p><br/></p>
-<h2 id="a-general-sparse-linear-solver-on-gpu">A general sparse linear solver on GPU</h2>
-<p>ILEE need a sparse linear solver, which means GPU acceleration make it 10-20 times faster. For GPU acceleration mode, we are using MATLAB and CUDA, but it requires users to have MATLAB license and a CUDA-compatible GPU, which is not general enough. While we did some search on the Internet, we could not find any GPU based linear solver that is general and open-sourced. We wish you can recommend us anything that works as a better substitute for our current solution. We prefer to use conditional gradient (CG) algorithm for linear solve because we found it has the best performance in our tests. </p>
+<h2 id="a-general-sparse-linear-solver-on-gpu">A General Sparse Linear Solver on GPU</h2>
+<p>ILEE uses a sparse linear solver, which means GPU acceleration can boost it 10-20 times faster. We have implanted the GPU acceleration mode using MATLAB with CUDA, but it requires users to have a MATLAB license and a CUDA-compatible GPU, which is not general enough. While we searched on the Internet, we could not find any GPU-based sparse linear solver that is general and open-sourced. We hope you can offer any recommendations on how to better substitute for our current solutions. Conditional gradient (CG) algorithm is preferred for the linear solve because it has the best performance in our tests.</p>
 <p><br/></p>
-<h2 id="upgrading-skeletonization-algorithm">Upgrading skeletonization algorithm</h2>
-<p>Many cytoskeleton indices depends on its skeleton image (don't confuse with "cytoskeleton", it means image rendered by thinning binary image to one-pixel but remain topological structure.). We are using the <a href="https://scikit-image.org/docs/dev/auto_examples/edges/plot_skeleton.html">Skeletonize</a> function in the <a href="https://scikit-image.org/">scikit-image</a>, which is very slow in 3D mode. It is perhaps because this function uses a single process on CPU (mine is 10-20% CPU usage), and therefore the computational power is not used efficiently. We would like you to recommend us a new function/library for pixel/voxel image skeletonization that uses a faster algorithm or multi-processing mode.</p>
+<h2 id="upgrading-skeletonization-algorithm">Upgrading Skeletonization Algorithm</h2>
+<p>Many cytoskeleton indices depend on the skeleton image of the binary image (Note: skeleton image is an image rendered by thinning the binary image to one-pixel but remains topological structure.). We are using the Skeletonize function in the scikit-image, which is very slow in 3D mode. It is perhaps because this function uses a single process on CPU (mine is 10-20% CPU usage), and therefore the computational power is not used efficiently. If there are any recommendations on a new function/library for pixel/voxel image skeletonization that uses a faster algorithm or multi-processing mode, please reach out at <a href="mailto:lipai@msu.edu">lipai@msu.edu</a> or our GitHub page.</p>
 <p><br/></p>
 <h2 id="bug-report">Bug report</h2>
-<p>If you follows our tutorial/API and find bugs, please report to us. Better send us your image sample and tell us how you process the sample in detail so that we can repeat.</p>
+<p>When following our tutorial/API and find bugs in the code, please report the issue. Please send an image sample and tell us your processing in detail so that we can repeat it.</p>
 <p><br/></p>
 <h2 id="tell-us-your-demand">Tell us your demand</h2>
-<p>If our algorithm does not fulfil your demand, you are welcomed to tell us what you wish to learn from your cytoskeleton image of your research or what functions you expect to have for our library. We aim to incorporate all possible functions for the interest of the community and therefore need your input. </p></div>
+<p>If our algorithm does not fulfill your demands, please let us know what you wish to learn from your cytoskeleton image of your research or what functions you expect to have for our library. We aim to incorporate all possible functions for the community's best interest and therefore need your input to make this possible, so please contact us for anything that can help better our website. Thank you!</p></div>
         
         
     </div>

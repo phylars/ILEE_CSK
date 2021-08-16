@@ -121,7 +121,7 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="first-level active"><a href="#ilee_csk">ILEE_CSK</a></li>
-        <li class="first-level "><a href="#presentation">Presentation</a></li>
+        <li class="first-level "><a href="#demo-of-performance">Demo of performance</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
@@ -129,29 +129,28 @@
 <h1 id="ilee_csk">ILEE_CSK</h1>
 <p>The eukaryotic cytoskeleton plays essential roles in cell signaling, trafficking, and motion. We aim to provide the best cytoskeleton segmentation-analysis algorithm and platform. </p>
 <p>ILEE_CSK is a Python library that provides a platform for unguided and automated quantitative analysis of cytoskeletal images at high accuracy, which support both 2D and native 3D data structure. ILEE means Implicit Laplacian of Enhanced Edge, which is a local thresholding algorithm that detects and uses the edge of cytoskeleton filaments as the local baseline for fine thresholding. Our robust algorithm captures and computes native pixel/voxel value, first-order derivative (gradient), and second-order derivative (Laplacian) of the image to automatedly generate a threshold image for cytoskeleton segmentation. </p>
+<p><br/></p>
 <p><img alt="scheme.PNG" src="https://github.com/phylars/image_host/blob/main/ILEE/scheme.PNG?raw=true" /></p>
+<p><br/></p>
 <p>The binary image of cytoskeleton fraction, together with the raw image is processed to compute more than 10 cytoskeleton indices, which are the matrices that measure the cytoskeletal features, of 5 classes: density, bundling, severing, branching, and directionality. The generated data can be used to determine and discover critical cytoskeletal feature of your own biological samples. </p>
 <p>In general, ILEE_CSK provides following state-of-art features to make outstanding performance:</p>
 <ul>
-<li>
-<p>Support of native 3D mode, avoiding image projection that losses a considerable amount of information perpendicular to z-axis. </p>
-</li>
-<li>
-<p>Unguided algorithm, avoiding human-bias related to subjective judgment in manual global thresholding, the currently most popular approach.</p>
-</li>
-<li>
-<p>High accuracy, the top among the kind. Please read our paper.</p>
-</li>
-<li>
-<p>Most complete cytoskeleton index list, with many novel indices developed by ourselves. </p>
-</li>
+<li>Support of native 3D mode, avoiding image projection that losses a considerable amount of information perpendicular to z-axis. </li>
+<li>Unguided algorithm, avoiding human-bias related to subjective judgment in manual global thresholding, the currently most popular approach.</li>
+<li>High accuracy, the top among the kind. Please read our paper.</li>
+<li>Most complete cytoskeleton index list, with many novel indices developed by ourselves. </li>
 </ul>
-<h1 id="presentation">Presentation</h1>
-<p>Visualization of results processed by ILEE.</p>
+<p><br/></p>
+<h1 id="demo-of-performance">Demo of performance</h1>
+<p>Below is a demo of the visualized data of selected cytoskeleton indices produced by ILEE. The Demo image is a live sample of Arabidopsis leaf actin, with GFP-fABD2 marker:</p>
 <p><img alt="demo1.PNG" src="https://github.com/phylars/image_host/blob/main/ILEE/demo1.PNG?raw=true" /></p>
-<p>Comparison of ILEE and other classic image segmentation approaches.</p>
+<p><br/></p>
+<p>Below is a comparison of ILEE and other classic image segmentation approaches, by pixel-wise accuracy (top) and indice accuracy (bottom):</p>
 <p><img alt="demo2.PNG" src="https://github.com/phylars/image_host/blob/main/ILEE/demo2.PNG?raw=true" /></p>
-<p><img alt="demo3.PNG" src="https://github.com/phylars/image_host/blob/main/ILEE/demo3.PNG?raw=true" /></p></div>
+<p><img alt="demo3.PNG" src="https://github.com/phylars/image_host/blob/main/ILEE/demo3.PNG?raw=true" /></p>
+<p><br/></p>
+<p>Below is a demo of ILEE performance on other types of eukaryotic cytoskeleton samples. The top is Arabidopsis leaf microtubule; the bottom is human cancer cell actin:</p>
+<p><img alt="" src="https://github.com/phylars/image_host/blob/main/ILEE/demo_other_types.PNG?raw=true" /></p></div>
         
         
     </div>
@@ -256,5 +255,5 @@
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2021-07-02 23:54:03.225310+00:00
+Build Date UTC : 2021-08-16 18:21:35.945767+00:00
 -->
