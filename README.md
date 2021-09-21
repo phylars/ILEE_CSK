@@ -4,7 +4,7 @@ ILEE_CSK is a Python library that provides a platform for unguided and automated
 
 For fast and convenient access to ILEE_CSK for everyone (without requirement for coding experience), please use our Google Colab pipeline:
 
-(2D mode) https://colab.research.google.com/github/phylars/ILEE_CSK/blob/ipynb/ILEE_2D_mode_(V_0_1_0).ipynb
+(2D mode) https://colab.research.google.com/github/phylars/ILEE_CSK/blob/ipynb/ILEE_2D_mode_(V_1_0).ipynb
 
 <br/>
 Github:
