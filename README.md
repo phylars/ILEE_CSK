@@ -24,13 +24,16 @@ Your effective area (area of the cell) is very important to the accuracy of the 
 <br/>
 <br/>
 If it looks approximately ideal, you can use the general pipeline without any concern. IF NOT, we specifically generate another pipeline for manual input of effective area, which several recommend choices:
-<br/><br/>
+<br/>
+<br/>
 [https://github.com/phylars/ILEE_CSK/blob/ipynb/ilee_2d_mode_with_custom_effective_area.ipynb](https://colab.research.google.com/github/phylars/ILEE_CSK/blob/ipynb/ilee_2d_mode_with_custom_effective_area.ipynb))
-<br/><br/>
+<br/>
+<br/>
 You may: (1) use the test/optimize Colab pipeline to determine a your preferred parameter setting and generate the area excel file in the end, as input of ILEE 2D pipeline with manual input of effective area. (2) mixing measured areas of different parameters from out pipeline by editting the excel file, but please maintain the excel structure. (3) Find your own way to measure effective area (such as ImageJ/FIJI, etc.).
 <br/>
+<br/>
 NOTE: please make sure the order of images samples in the area excel file is NEVER changed, and this order MUST be same as your final result output (otherwise your data does not make sense). We do not check whether these two orders match during the pipeline, so you have to be cautious.
-
+<br/>
 
 <br/>
 Github:
