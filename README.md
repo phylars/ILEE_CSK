@@ -22,14 +22,12 @@ ATTENTION for users who are handling cell samples with true blank (exactly nothi
 <br/>
 Your effective area (area of the cell) is very important to the accuracy of the result. While we do have the automatic cell segment algorithm, but we cannot promise the area is absolutely accurate. To obtain accurate result, please first run the pipeline to test/optimize whether the total cell segmentation is accurate:
 <br/>
-<br/>
 [https://colab.research.google.com/github/phylars/ILEE_CSK/blob/ipynb/2D_mode_calculating_effective_area.ipynb](https://colab.research.google.com/github/phylars/ILEE_CSK/blob/ipynb/2D_mode_calculating_effective_area.ipynb)
 <br/>
 <br/>
 If it looks approximately ideal, you can use the general pipeline without any concern. IF NOT, we specifically generate another pipeline for manual input of effective area, which several recommend choices:
 <br/>
-<br/>
-[https://github.com/phylars/ILEE_CSK/blob/ipynb/ilee_2d_mode_with_custom_effective_area.ipynb](https://colab.research.google.com/github/phylars/ILEE_CSK/blob/ipynb/ilee_2d_mode_with_custom_effective_area.ipynb))
+[https://github.com/phylars/ILEE_CSK/blob/ipynb/ilee_2d_mode_with_custom_effective_area.ipynb](https://colab.research.google.com/github/phylars/ILEE_CSK/blob/ipynb/ilee_2d_mode_with_custom_effective_area.ipynb)
 <br/>
 <br/>
 You may:
