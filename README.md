@@ -17,7 +17,8 @@ https://colab.research.google.com/github/phylars/ILEE_CSK/blob/ipynb/ILEE_3D_mod
 <br/>
 ATTENTION for users who are handling cell samples with true blank (exactly nothing inside, not including tissue, such as leaf epidermis, or extremely maximized single cell with full field occupied) area in the image:
 <br/>
-Your effective area (area of the cell) is very important to the accuracy of the result. While we do have the automatic cell segment algorithm, but we cannot promise the area is absolutely accurate. To obtain accurate result, please first run the pipeline to test/optimize whether the total cell segmentation is accurate.
+<br/>
+Your effective area (area of the cell) is very important to the accuracy of the result. While we do have the automatic cell segment algorithm, but we cannot promise the area is absolutely accurate. To obtain accurate result, please first run the pipeline to test/optimize whether the total cell segmentation is accurate:
 <br/>
 <br/>
 [https://colab.research.google.com/github/phylars/ILEE_CSK/blob/ipynb/2D_mode_calculating_effective_area.ipynb](https://colab.research.google.com/github/phylars/ILEE_CSK/blob/ipynb/2D_mode_calculating_effective_area.ipynb)
