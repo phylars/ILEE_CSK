@@ -14,6 +14,11 @@ https://colab.research.google.com/github/phylars/ILEE_CSK/blob/ipynb/ILEE_3D_mod
 <br/>
 (3D GPU mode) Google Colab currently not supported. Please use the library locally for Matlab empowered 3D GPU mode.
 
+
+<br/>
+ATTENTION for users who are handling cell samples with true blank (exactly nothing inside, not including tissue, such as leaf epidermis, or extremely maximized single cell with full field occupied) area in the image:
+Your effective area (area of the cell) is very important to the accuracy of the result. While we do have the automatic cell segment algorithm, but we cannot promise the area is absolutely accurate. To obtain accurate result, please first run the pipeline 
+
 <br/>
 Github:
 
