@@ -25,7 +25,7 @@ Your effective area (area of the cell) is very important to the accuracy of the 
 [https://colab.research.google.com/github/phylars/ILEE_CSK/blob/ipynb/2D_mode_calculating_effective_area.ipynb]
 <br/>
 <br/>
-If it looks approximately ideal, you can use the general pipeline without any concern. IF NOT, we specifically generate another pipeline for manual input of effective area, which several recommend choices:
+If it looks approximately ideal, you can use the general pipeline without any concern. IF NOT, we specifically generate another pipeline for manual input of effective areas, which you generate by yourself:
 <br/>
 [https://github.com/phylars/ILEE_CSK/blob/ipynb/ilee_2d_mode_with_custom_effective_area.ipynb]
 <br/>
